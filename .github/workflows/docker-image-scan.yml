@@ -15,6 +15,6 @@ jobs:
         - name: Image scan with trivy
           uses : aquasecurity/trivy-action@v0.36.0
           with:
-            image-ref: '${{ vars.DOCKERHUB_USERNAME }}/ecs-flask:latest'
-            severity: 'CRITICAL'
-            exit-code: '0'
+            image-ref: ${{ vars.DOCKERHUB_USERNAME }}/ecs-flask:latest
+            severity: HIGH, CRITICAL
+            exit-code: '1'
