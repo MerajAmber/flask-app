@@ -30,6 +30,6 @@ jobs:
 
     Deploy-to-prod:
         needs: [trivy_scan]
-        uses: ./.github/workflows/docker-image-scan.yml
+        uses: ./.github/workflows/deploy-prod-srv.yml
         secrets: inherit
     
