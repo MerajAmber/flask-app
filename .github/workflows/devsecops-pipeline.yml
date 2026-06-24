@@ -4,6 +4,7 @@ on:
     push:
         branches: [main]
 jobs:
+    # Security scan
     code_quality_check:
         uses: ./.github/workflows/code-quality.yml
 
@@ -15,3 +16,11 @@ jobs:
     
     docker_scan:
         uses: ./.github/workflows/docker-lint.yml
+    
+    #building docker image
+    build_docker:
+        needs: [code_quality_check, sectet_scan, dependency-scan, docker_scan]
+        uses: ./.github/workflows/docker-buld-push.yml
+        secrets: inherit
+    
+    
