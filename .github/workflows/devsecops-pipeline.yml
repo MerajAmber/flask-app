@@ -22,5 +22,10 @@ jobs:
         needs: [code_quality_check, sectet_scan, dependency-scan, docker_scan]
         uses: ./.github/workflows/docker-buld-push.yml
         secrets: inherit
+
+    trivy_scan:
+        needs: [build_docker]
+        uses: ./.github/workflows/docker-image-scan.yml
+        secrets: inherit
     
     
