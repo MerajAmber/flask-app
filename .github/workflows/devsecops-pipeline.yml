@@ -27,5 +27,9 @@ jobs:
         needs: [build_docker]
         uses: ./.github/workflows/docker-image-scan.yml
         secrets: inherit
-    
+
+    Deploy-to-prod:
+        needs: [trivy_scan]
+        uses: ./.github/workflows/docker-image-scan.yml
+        secrets: inherit
     
