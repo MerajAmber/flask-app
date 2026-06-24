@@ -14,4 +14,4 @@ jobs:
                 key: ${{ secrets.EC2_KEY }}
                 script: |
                     echo "Stating Deployment"
-                    mkdir -p DevOps
+                    docker run -d -p 80:80 meraj0302/ecs-flask:latest
