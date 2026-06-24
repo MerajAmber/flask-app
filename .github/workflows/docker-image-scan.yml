@@ -17,5 +17,4 @@ jobs:
           with:
             image-ref: '${{ vars.DOCKERHUB_USERNAME }}/ecs-flask:latest'
             severity: 'CRITICAL'
-            skip-setup-trivy: true
             exit-code: '1'
