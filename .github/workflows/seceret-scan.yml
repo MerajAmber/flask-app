@@ -1,0 +1,20 @@
+
+name: secret scan
+
+on:
+    workflow_call:
+
+jobs:
+    secrets-scan:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v6
+              with:
+                fetch-depth: 0 #full scan from all since code written
+
+            - name: run gitleaks scanner
+              uses: gitleaks/gitleaks-action@v3
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #It is proteced by github, it manages by github 
+

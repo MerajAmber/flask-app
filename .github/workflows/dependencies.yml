@@ -1,0 +1,23 @@
+name: dependency scan
+
+on:
+    workflow_call:
+
+jobs:
+    depedency-check:
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: code-checkout
+              uses: actions/checkout@v4
+
+            - name: setup python 3.13
+              uses: actions/setup-python@v6 
+              with:
+                python-version: "3.13"
+
+            - name: pip install dependency audit
+              run: pip install pip-audit
+
+            - name: Audit Dependencies
+              run: pip-audit -r requirements.txt
