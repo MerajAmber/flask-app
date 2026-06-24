@@ -15,6 +15,7 @@ jobs:
                 script: |
                     echo "Stating Deployment"
                     docker compose down
+                    docker compose pull
                     sleep
-                    docker compose up
+                    docker compose up -d
                     
