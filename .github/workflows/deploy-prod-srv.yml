@@ -1,0 +1,17 @@
+name: Deploy To Server
+
+on:
+    workflow_call:
+jobs:
+    Deploy-to-EC2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: ssh to prod server
+              uses: appleboy/ssh-action@v1
+              with:
+                host: ${{ secrets.EC2_HOST }}
+                username: ${{ secrets.EC2_USERNAME }}
+                key: ${{ secrets.EC2_KEY }}
+                script: |
+                    echo "Stating Deployment"
+                    mkdir -p DevOps
