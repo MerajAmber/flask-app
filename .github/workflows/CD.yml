@@ -6,15 +6,13 @@ jobs:
     Deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: ssh to prod server
-              uses: appleboy/ssh-action@v1
-              with:
+          - name: Executing remote ssh commands using password
+            uses: appleboy/ssh-action@v1.0.3
+            with:
                 host: ${{ secrets.EC2_HOST }}
                 username: ${{ secrets.EC2_USERNAME }}
-                key: ${{ secrets.EC2_KEY }}
+                key: ${{ secrets.EC2_KEY }} 
+                port: 22
                 script: |
-                    echo "Stating Deployment"
-                    docker compose down
-                    docker compose pull
-                    sleep 5
-                    docker compose up -d
+                    echo "Connected successfully!"
+                    whoami
