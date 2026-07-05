@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: MerajAmber/flask-app:latest
+          tags: meraj0302/flask-app:latest
