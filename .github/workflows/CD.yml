@@ -15,6 +15,7 @@ jobs:
                 port: 22
                 script: |
                     echo "Stating Deployment"
+                    pwd
                     docker compose down
                     docker compose pull
                     sleep 5
