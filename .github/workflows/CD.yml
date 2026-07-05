@@ -14,5 +14,8 @@ jobs:
                 key: ${{ secrets.EC2_KEY }} 
                 port: 22
                 script: |
-                    echo "Connected successfully!"
-                    whoami
+                    echo "Stating Deployment"
+                    docker compose down
+                    docker compose pull
+                    sleep 5
+                    docker compose up -d
