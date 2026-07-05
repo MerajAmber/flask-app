@@ -1,8 +1,7 @@
-name: build-CI
+name: CI
 
 on:
-  push:
-    branches: [main]
+    workflow_call:
 jobs:
   build:
     runs-on: ubuntu-latest

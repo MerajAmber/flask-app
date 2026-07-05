@@ -1,0 +1,15 @@
+name: DevSecOps End To End Pipeline
+
+on:
+    push:
+        branches: [main]
+jobs:
+    
+    build_and_push_to_docker-Hub:
+        uses: ./.github/workflows/CI.yml
+        secrets: inherit
+
+    deploy_to_EC2_Instance:
+        needs: [build_and_push_to_docker-Hub]
+        uses: ./.github/workflows/CD.yml
+        secrets: inherit

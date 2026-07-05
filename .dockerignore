@@ -1,0 +1,48 @@
+# Git version control files
+.git
+.gitignore
+.gitattributes
+
+# Local environment secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+secrets.txt
+
+# Node.js dependencies and logs
+node_modules
+npm-debug.log*
+yarn-error.log*
+
+# Python build artifacts and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+
+# Java / JVM build artifacts
+target/
+.gradle/
+build/
+
+# Operating system metadata and local IDE settings
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Docker specific logs and config files
+Dockerfile
+docker-compose.yml
+.dockerignore

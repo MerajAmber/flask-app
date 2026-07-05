@@ -1,7 +1,7 @@
 services:
-  frontend:
-    image: meraj0302/ecs-flask:latest
-    container_name: Flasnk_on_frontend
+  flask:
+    image: meraj0302/flask-app:latest
+    container_name: flask-app
     ports:
       - "80:80"
     restart: unless-stopped
